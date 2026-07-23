@@ -11,7 +11,7 @@
     height: 85vh;
     width: 100%;
     background-color: cornflowerblue;
-    background: url('bgorganic.jpg');
+    background: url('images/bgorganic.jpg');
     background-repeat: no-repeat;
     background-size:contain;
     background-color: #f9f7f2;
@@ -361,7 +361,7 @@ nav>.nav-items{
 /* categories =======================================================*/
 .categories{
     height: 80vh;
-    background: url(./category_bg.jpg);
+    background: url(images/category_bg.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
