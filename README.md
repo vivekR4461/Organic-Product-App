@@ -9,11 +9,11 @@ A fully responsive website clone, created using **HTML** and **CSS**. The projec
 
 ## 📂 Project Structure
 
-organic-product-website/
-├── index.html
-├── style.css
-├── /images
-├── Orbito.otf
+organic-product-website/ <br>
+├── index.html <br>
+├── style.css <br>
+├── /images <br>
+├── Orbito.otf <br> 
 └── README.md
 
 ## 🎯 What I Learned / Practiced
