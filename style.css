@@ -657,6 +657,8 @@ nav>.nav-items{
     width: 73%;
     display: flex;
     align-items: center;
+    /* FIX 1: Anchor the absolutely positioned child to this parent container */
+    position: relative; 
     img{
         height: 35%;
     }
@@ -672,13 +674,17 @@ nav>.nav-items{
 }
 .testimonial>.boxes>.box:nth-child(2){
     position: absolute;
-    height: 20%;
-    width: 56%;
-    right: 14%;
+    /* FIX 2: Text width expanded slightly, and positioned exactly against the right edge of the parent container to perfectly overlap Box 1 */
+    height: auto; 
+    min-height: 25%;
+    width: 75%; 
+    right: 0; 
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: aliceblue;
+    padding: 25px; /* Added padding so text doesn't touch the borders */
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.03); /* Subtle shadow to make the overlap look natural */
 }
 .bi{
     padding-right: 10px;
@@ -694,5 +700,58 @@ footer{
         span{
             color: limegreen;
         }
+    }
+}
+
+/* ==============================================================
+   MEDIA QUERIES FOR MOBILE RESPONSIVENESS (Only added at bottom)
+=============================================================== */
+@media (max-width: 768px) {
+    /* Mobile Header & Nav */
+    .home, .second, .third, .categories, .best-seller, .product-category, .product-categories, .testimonial {
+        height: auto !important;
+        padding-bottom: 50px;
+    }
+    header, nav {
+        flex-direction: column;
+        height: auto !important;
+        padding: 15px 0;
+    }
+    header>.header-item {
+        margin: 5px 0;
+    }
+    nav>.nav-items {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    /* Convert row boxes to columns on mobile */
+    .second>.boxes, .third>.boxes, .categories>.boxes, .product-category>.boxes, .product-categories>.boxes, .featured-product {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    /* Ensure boxes don't overflow screen width */
+    .second>.boxes>.box, .featured-product>.box, .categories>.boxes>.box, .product-category>.boxes>.box, .product-categories>.boxes>.box {
+        width: 90% !important;
+        margin: 20px auto !important;
+        height: auto !important;
+    }
+
+    /* Fix Testimonial overlap for small screens (Stacks them instead) */
+    .testimonial>.boxes {
+        flex-direction: column;
+    }
+    .testimonial>.boxes>.box:nth-child(1) {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .testimonial>.boxes>.box:nth-child(2) {
+        position: relative;
+        width: 90%;
+        right: auto;
     }
 }
