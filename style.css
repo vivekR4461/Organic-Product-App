@@ -2,9 +2,12 @@
     font-family: "Orbito";
     src: url("/Orbito.otf");
 }
-*{
+* {
     margin: 0;
-    font-family: "Orbito",sans-serif;
+    font-family: "Orbito", sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 /* home------------------------------------- */
 .home{
